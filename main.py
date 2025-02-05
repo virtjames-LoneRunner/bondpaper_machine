@@ -44,6 +44,7 @@ def main():
 
     # Runs repeatedly
     def check_coin_slot_interrupt():
+        global pulse_count
         if system.active_view == 'main_frame':
             if pulse_count > 0:
                 # Determine coin value based on pulse count
@@ -57,7 +58,7 @@ def main():
                     coin_value = 0  # Unknown coin
                 print(f"Coin Inserted: {coin_value} Pesos")
 
-                # Add your logic here to handle the coin insertion 
+                # Add logic here to handle the coin insertion 
                 # (e.g., update a counter, dispense a product, etc.)
 
                 system.amount_given_var.set(system.amount_given_var.get() + coin_value)
