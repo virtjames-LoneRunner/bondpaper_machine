@@ -24,7 +24,7 @@ class App(ct.CTk):
     # Constants
     FRAME_WIDTH = 100
     SIDEBAR_FRAME_WIDTH = 70
-    BUTTON_WIDTH = 120
+    BUTTON_WIDTH = 150
     BUTTON_HEIGHT = 30
     BUTTON_FONT_SIZE = 16
     BUTTON_PADX = 10
