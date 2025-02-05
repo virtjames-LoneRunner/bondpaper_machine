@@ -83,7 +83,7 @@ class App(ct.CTk):
 
         self.sidebar_button_2 = ct.CTkButton(
             self.sidebar_frame,
-            text="Select Paper",
+            text="Paper",
             state="disabled",
             command=lambda: self.change_active_view("select_paper_frame"),
             width=self.BUTTON_WIDTH,
