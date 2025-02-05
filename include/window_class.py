@@ -26,7 +26,7 @@ class App(ct.CTk):
     SIDEBAR_FRAME_WIDTH = 70
     BUTTON_WIDTH = 100
     BUTTON_HEIGHT = 30
-    BUTTON_FONT_SIZE = 15
+    BUTTON_FONT_SIZE = 20
     BUTTON_PADX = 10
     BUTTON_PADY = 10
 
@@ -165,9 +165,9 @@ class App(ct.CTk):
         self.amount_frame = ct.CTkFrame(self.main_frame, fg_color=("gray75", "gray25")) 
         self.amount_frame.pack(padx=20, pady=(50, 0))
         self.amount_given_var = ct.IntVar(value=0)
-        self.currency_symbol_label = ct.CTkLabel(self.amount_frame, text="₱", anchor="w", font=ct.CTkFont(size=100))
+        self.currency_symbol_label = ct.CTkLabel(self.amount_frame, text="₱", anchor="w", font=ct.CTkFont(size=150))
         self.currency_symbol_label.grid(row=0, column=0, padx=20, pady=(50, 50))
-        self.display_amount_label = ct.CTkLabel(self.amount_frame, textvariable=self.amount_given_var, anchor="w", font=ct.CTkFont(size=100))
+        self.display_amount_label = ct.CTkLabel(self.amount_frame, textvariable=self.amount_given_var, anchor="w", font=ct.CTkFont(size=150))
         self.display_amount_label.grid(row=0, column=1, padx=20, pady=(50, 50))
         # Main Frame
 
