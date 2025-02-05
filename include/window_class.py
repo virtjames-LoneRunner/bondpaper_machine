@@ -26,6 +26,7 @@ class App(ct.CTk):
     SIDEBAR_FRAME_WIDTH = 70
     BUTTON_WIDTH = 100
     BUTTON_HEIGHT = 50
+    BUTTON_FONT_SIZE = 10
 
     # Variables
     paper_sizes = []
@@ -75,7 +76,7 @@ class App(ct.CTk):
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
             fg_color="#453ad6",
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
 
         self.sidebar_button_2 = ct.CTkButton(
@@ -85,7 +86,7 @@ class App(ct.CTk):
             command=lambda: self.change_active_view("select_paper_frame"),
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
 
         self.sidebar_button_3 = ct.CTkButton(
@@ -95,7 +96,7 @@ class App(ct.CTk):
             command=lambda: self.change_active_view("quantity_frame"),
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
 
         self.sidebar_button_4 = ct.CTkButton(
@@ -105,7 +106,7 @@ class App(ct.CTk):
             command=lambda: self.change_active_view("done_frame"),
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.sidebar_button_4.grid(row=4, column=0, padx=20, pady=10)
 
     # Initialize first display
@@ -115,7 +116,7 @@ class App(ct.CTk):
             self, width=self.FRAME_WIDTH, fg_color=("gray75", "gray25"))
         self.select_paper_frame.grid_rowconfigure(
             3, minsize=20)  # reserve space for padding
-        self.select_paper_label = ct.CTkLabel(self.select_paper_frame, text="Select Paper", anchor="w", font=ct.CTkFont(size=80))
+        self.select_paper_label = ct.CTkLabel(self.select_paper_frame, text="Select Paper", anchor="w", font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.select_paper_label.pack(padx=20, pady=(50, 0))
         self.paper_buttons_frame = ct.CTkFrame(self.select_paper_frame, fg_color=("gray75", "gray25"))
         for i, paper_size in enumerate(self.paper_sizes):
@@ -124,7 +125,7 @@ class App(ct.CTk):
                 text=paper_size,
                 width=self.BUTTON_WIDTH,
                 height=self.BUTTON_WIDTH,
-                font=ct.CTkFont(size=50))
+                font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
             self.paper_size_buttons[paper_size].grid(row=0, column=i, padx=20, pady=(50, 0))
         self.paper_buttons_frame.pack(padx=20, pady=(50, 0))
         # Select Paper Frame
@@ -134,7 +135,7 @@ class App(ct.CTk):
             self, width=self.FRAME_WIDTH, fg_color=("gray75", "gray25"))
         self.quantity_frame.grid_rowconfigure(
             3, minsize=20)  # reserve space for padding
-        self.quantity_label = ct.CTkLabel(self.quantity_frame, text="Set Quantity", anchor="w", font=ct.CTkFont(size=80))
+        self.quantity_label = ct.CTkLabel(self.quantity_frame, text="Set Quantity", anchor="w", font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.quantity_label.pack(padx=20, pady=(50, 0))
         # Quantity Frame
 
@@ -143,10 +144,10 @@ class App(ct.CTk):
             self, width=self.FRAME_WIDTH, fg_color=("gray75", "gray25"))
         self.done_frame.grid_rowconfigure(
             3, minsize=20)  # reserve space for padding
-        self.done_label = ct.CTkLabel(self.done_frame, text="Done", anchor="w", font=ct.CTkFont(size=80))
+        self.done_label = ct.CTkLabel(self.done_frame, text="Done", anchor="w", font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.done_label.pack(padx=20, pady=(50, 0))
 
-        self.countdown_label = ct.CTkLabel(self.done_frame, text="00:00:00", anchor="w", font=ct.CTkFont(size=80))
+        self.countdown_label = ct.CTkLabel(self.done_frame, text="00:00:00", anchor="w", font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.countdown_label.pack(padx=20, pady=(50, 0))
         self.done_button = ct.CTkButton(self.done_frame, text="Another Transaction")
         # Done Frame
@@ -157,14 +158,14 @@ class App(ct.CTk):
         self.main_frame.grid(row=0, column=1, rowspan=3, sticky="news")
         self.main_frame.grid_rowconfigure(
             3, minsize=20)  # reserve space for padding
-        self.main_label = ct.CTkLabel(self.main_frame, text="Start Transaction", anchor="w", font=ct.CTkFont(size=80))
+        self.main_label = ct.CTkLabel(self.main_frame, text="Start Transaction", anchor="w", font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.main_label.pack(padx=20, pady=(50, 0))
         self.amount_frame = ct.CTkFrame(self.main_frame, fg_color=("gray75", "gray25")) 
         self.amount_frame.pack(padx=20, pady=(50, 0))
         self.amount_given_var = ct.IntVar(value=0)
-        self.currency_symbol_label = ct.CTkLabel(self.amount_frame, text="₱", anchor="w", font=ct.CTkFont(size=400))
+        self.currency_symbol_label = ct.CTkLabel(self.amount_frame, text="₱", anchor="w", font=ct.CTkFont(size=100))
         self.currency_symbol_label.grid(row=0, column=0, padx=20, pady=(50, 50))
-        self.display_amount_label = ct.CTkLabel(self.amount_frame, textvariable=self.amount_given_var, anchor="w", font=ct.CTkFont(size=400))
+        self.display_amount_label = ct.CTkLabel(self.amount_frame, textvariable=self.amount_given_var, anchor="w", font=ct.CTkFont(size=100))
         self.display_amount_label.grid(row=0, column=1, padx=20, pady=(50, 50))
         # Main Frame
 
@@ -178,7 +179,7 @@ class App(ct.CTk):
             height=self.BUTTON_HEIGHT,
             fg_color="gray75",
             text_color="#453ad6",
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.prev_button.grid(row=0, column=0, padx=20, pady=10)
         self.next_button = ct.CTkButton(
             self.buttons_frame,
@@ -188,7 +189,7 @@ class App(ct.CTk):
             height=self.BUTTON_HEIGHT,
             fg_color="gray75",
             text_color="#453ad6",
-            font=ct.CTkFont(size=50))
+            font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
         self.next_button.grid(row=0, column=1, padx=20, pady=10)
         self.buttons_frame.grid(row=2, column=1, rowspan=3, sticky="e")
         # Global Buttons
