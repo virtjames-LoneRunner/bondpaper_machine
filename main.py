@@ -29,7 +29,7 @@ def count_pulse(channel):
     pulse_count += 1
 
 # Attach the callback function to the rising edge of the pulse
-gpio.add_event_detect(coin_acceptor_pulse_pin, gpio.RISING, callback=count_pulse, bouncetime=200) 
+#gpio.add_event_detect(coin_acceptor_pulse_pin, gpio.RISING, callback=count_pulse, bouncetime=200) 
 
 def main():
     # Initialize components
