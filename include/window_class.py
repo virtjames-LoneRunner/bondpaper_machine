@@ -27,6 +27,8 @@ class App(ct.CTk):
     BUTTON_WIDTH = 150
     BUTTON_HEIGHT = 30
     BUTTON_FONT_SIZE = 20
+    BUTTON_PADX=10
+    BUTTON_PADY=10
 
     # Variables
     paper_sizes = []
@@ -77,7 +79,7 @@ class App(ct.CTk):
             height=self.BUTTON_WIDTH,
             fg_color="#453ad6",
             font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
-        self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
+        self.sidebar_button_1.grid(row=1, column=0, padx=self.BUTTON_PADX, pady=self.BUTTON_PADY)
 
         self.sidebar_button_2 = ct.CTkButton(
             self.sidebar_frame,
@@ -87,7 +89,7 @@ class App(ct.CTk):
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
             font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
-        self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
+        self.sidebar_button_2.grid(row=2, column=0, padx=self.BUTTON_PADX, pady=self.BUTTON_PADY)
 
         self.sidebar_button_3 = ct.CTkButton(
             self.sidebar_frame,
@@ -97,7 +99,7 @@ class App(ct.CTk):
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
             font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
-        self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
+        self.sidebar_button_3.grid(row=3, column=0, padx=self.BUTTON_PADX, pady=self.BUTTON_PADY)
 
         self.sidebar_button_4 = ct.CTkButton(
             self.sidebar_frame,
@@ -107,7 +109,7 @@ class App(ct.CTk):
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
             font=ct.CTkFont(size=self.BUTTON_FONT_SIZE))
-        self.sidebar_button_4.grid(row=4, column=0, padx=20, pady=10)
+        self.sidebar_button_4.grid(row=4, column=0, padx=self.BUTTON_PADX, pady=self.BUTTON_PADY)
 
     # Initialize first display
     def _initialize_display_for_start(self):
