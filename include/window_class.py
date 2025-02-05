@@ -73,7 +73,7 @@ class App(ct.CTk):
 
         self.sidebar_button_1 = ct.CTkButton(
             self.sidebar_frame,
-            text="Start Transaction",
+            text="Start",
             command=lambda: self.change_active_view("main_frame"),
             width=self.BUTTON_WIDTH,
             height=self.BUTTON_WIDTH,
