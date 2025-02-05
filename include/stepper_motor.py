@@ -1,8 +1,8 @@
 import time
 
 # class placeholder for non-raspi development devices
-# import RPi.GPIO as gpio
-from include.fake_gpio import gpio
+import RPi.GPIO as gpio
+# from include.fake_gpio import gpio
 
 # defines
 CW  = 1

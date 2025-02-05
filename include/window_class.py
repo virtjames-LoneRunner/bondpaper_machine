@@ -273,7 +273,7 @@ class App(ct.CTk):
         if self.display_index == len(self.views) - 1:
             return
         self.display_index += 1
-        self._change_active_view_by_index(self.display_index)
+        self._change_active_view_by_index(self.display_index)   
     
     def start_stop(self):
         if not self.is_running:
