@@ -22,9 +22,10 @@ class App(ct.CTk):
     add_amount_button_event = None
 
     # Constants
-    FRAME_WIDTH = 200
-    BUTTON_WIDTH = 200
-    BUTTON_HEIGHT = 100
+    FRAME_WIDTH = 100
+    SIDEBAR_FRAME_WIDTH = 70
+    BUTTON_WIDTH = 100
+    BUTTON_HEIGHT = 50
 
     # Variables
     paper_sizes = []
@@ -62,7 +63,7 @@ class App(ct.CTk):
     def _init_buttons(self):
         # create sidebar frame with widgets
         self.sidebar_frame = ct.CTkFrame(
-            self, width=140, corner_radius=0)
+            self, width=self.SIDEBAR_FRAME_WIDTH, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(
             4, minsize=20)  # reserve space for padding
@@ -173,8 +174,8 @@ class App(ct.CTk):
             self.buttons_frame,
             text="Back",
             command=self._display_back,
-            width=300,
-            height=150,
+            width=self.BUTTON_WIDTH,
+            height=self.BUTTON_HEIGHT,
             fg_color="gray75",
             text_color="#453ad6",
             font=ct.CTkFont(size=50))
@@ -183,8 +184,8 @@ class App(ct.CTk):
             self.buttons_frame,
             text="Next",
             command=self._display_next,
-            width=300,
-            height=150,
+            width=self.BUTTON_WIDTH,
+            height=self.BUTTON_HEIGHT,
             fg_color="gray75",
             text_color="#453ad6",
             font=ct.CTkFont(size=50))
