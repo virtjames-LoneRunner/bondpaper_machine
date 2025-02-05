@@ -2,7 +2,7 @@ import customtkinter as ct
 from datetime import datetime, timedelta
 
 # Modes: "System" (standard), "Dark", "Light"
-ct.set_appearance_mode("System")
+ct.set_appearance_mode("Dark")
 # Themes: "blue" (standard), "green", "dark-blue"
 ct.set_default_color_theme("blue")
 
